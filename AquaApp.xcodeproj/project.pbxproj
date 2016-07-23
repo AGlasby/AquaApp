@@ -13,6 +13,11 @@
 		E721538D1D42034900E7CD47 /* AquaApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E721538B1D42034900E7CD47 /* AquaApp.xcdatamodeld */; };
 		E721538F1D42034900E7CD47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E721538E1D42034900E7CD47 /* Assets.xcassets */; };
 		E72153921D42034900E7CD47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72153901D42034900E7CD47 /* LaunchScreen.storyboard */; };
+		E721539F1D4203BC00E7CD47 /* Aquarium.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721539E1D4203BC00E7CD47 /* Aquarium.swift */; };
+		E72153A11D4211C700E7CD47 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72153A01D4211C700E7CD47 /* Constants.swift */; };
+		E72153A31D42144B00E7CD47 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72153A21D42144B00E7CD47 /* Conversions.swift */; };
+		E77E33781D4274C800A05B9A /* SetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E33771D4274C800A05B9A /* SetupVC.swift */; };
+		E77E337A1D435F9D00A05B9A /* BasicConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E33791D435F9D00A05B9A /* BasicConfigVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		E721538E1D42034900E7CD47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E72153911D42034900E7CD47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E72153931D42034900E7CD47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E721539E1D4203BC00E7CD47 /* Aquarium.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aquarium.swift; sourceTree = "<group>"; };
+		E72153A01D4211C700E7CD47 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E72153A21D42144B00E7CD47 /* Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversions.swift; sourceTree = "<group>"; };
+		E77E33771D4274C800A05B9A /* SetupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupVC.swift; sourceTree = "<group>"; };
+		E77E33791D435F9D00A05B9A /* BasicConfigVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicConfigVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,8 +66,12 @@
 		E72153831D42034900E7CD47 /* AquaApp */ = {
 			isa = PBXGroup;
 			children = (
+				E721539D1D42038D00E7CD47 /* Model */,
+				E721539C1D42038500E7CD47 /* View */,
+				E721539B1D42037D00E7CD47 /* Controller */,
+				E721539A1D42037300E7CD47 /* Utilities */,
+				E72153991D42036400E7CD47 /* Services */,
 				E72153841D42034900E7CD47 /* AppDelegate.swift */,
-				E72153861D42034900E7CD47 /* ViewController.swift */,
 				E72153881D42034900E7CD47 /* Main.storyboard */,
 				E721538E1D42034900E7CD47 /* Assets.xcassets */,
 				E72153901D42034900E7CD47 /* LaunchScreen.storyboard */,
@@ -65,6 +79,47 @@
 				E721538B1D42034900E7CD47 /* AquaApp.xcdatamodeld */,
 			);
 			path = AquaApp;
+			sourceTree = "<group>";
+		};
+		E72153991D42036400E7CD47 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		E721539A1D42037300E7CD47 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E72153A01D4211C700E7CD47 /* Constants.swift */,
+				E72153A21D42144B00E7CD47 /* Conversions.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		E721539B1D42037D00E7CD47 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E72153861D42034900E7CD47 /* ViewController.swift */,
+				E77E33771D4274C800A05B9A /* SetupVC.swift */,
+				E77E33791D435F9D00A05B9A /* BasicConfigVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E721539C1D42038500E7CD47 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E721539D1D42038D00E7CD47 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E721539E1D4203BC00E7CD47 /* Aquarium.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +194,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E72153A11D4211C700E7CD47 /* Constants.swift in Sources */,
+				E77E33781D4274C800A05B9A /* SetupVC.swift in Sources */,
 				E721538D1D42034900E7CD47 /* AquaApp.xcdatamodeld in Sources */,
 				E72153871D42034900E7CD47 /* ViewController.swift in Sources */,
+				E72153A31D42144B00E7CD47 /* Conversions.swift in Sources */,
+				E721539F1D4203BC00E7CD47 /* Aquarium.swift in Sources */,
 				E72153851D42034900E7CD47 /* AppDelegate.swift in Sources */,
+				E77E337A1D435F9D00A05B9A /* BasicConfigVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +353,7 @@
 				E72153981D42034900E7CD47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pyr-vO-IfM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="BYZ-38-t0r" customClass="ViewController" customModule="AquaApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,308 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMD-lH-afV">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cichlid-tank-1" translatesAutoresizingMaskIntoConstraints="NO" id="cAh-jl-FZL">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYM-LF-pVb">
+                                        <rect key="frame" x="32" y="108" width="536" height="404"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFc-j0-fAZ">
+                                                <rect key="frame" x="248" y="187" width="39" height="30"/>
+                                                <state key="normal" title="setup"/>
+                                                <connections>
+                                                    <segue destination="MzK-2i-ZCx" kind="show" identifier="ConfigureAquarium" id="w7s-vW-9fe"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="0.63709590517241377" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="QFc-j0-fAZ" firstAttribute="centerY" secondItem="QYM-LF-pVb" secondAttribute="centerY" id="0Od-ew-vN4"/>
+                                            <constraint firstItem="QFc-j0-fAZ" firstAttribute="centerX" secondItem="QYM-LF-pVb" secondAttribute="centerX" id="P33-gN-cWx"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="QYM-LF-pVb" firstAttribute="leading" secondItem="DMD-lH-afV" secondAttribute="leading" constant="32" id="15s-i0-bAP"/>
+                                    <constraint firstItem="cAh-jl-FZL" firstAttribute="leading" secondItem="DMD-lH-afV" secondAttribute="leading" id="1Lt-hP-Jr9"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="cAh-jl-FZL" secondAttribute="bottom" id="1Xx-hD-Mya"/>
+                                    <constraint firstAttribute="trailing" secondItem="cAh-jl-FZL" secondAttribute="trailing" id="60h-lb-2Es"/>
+                                    <constraint firstItem="cAh-jl-FZL" firstAttribute="top" secondItem="DMD-lH-afV" secondAttribute="top" constant="72" id="9bU-DP-sNC"/>
+                                    <constraint firstAttribute="trailing" secondItem="QYM-LF-pVb" secondAttribute="trailing" constant="32" id="GHA-Am-ewq"/>
+                                    <constraint firstItem="cAh-jl-FZL" firstAttribute="top" secondItem="DMD-lH-afV" secondAttribute="top" id="SHg-oK-nY7"/>
+                                    <constraint firstItem="QYM-LF-pVb" firstAttribute="top" secondItem="DMD-lH-afV" secondAttribute="top" constant="108" id="U98-aW-4Cp"/>
+                                    <constraint firstAttribute="bottom" secondItem="cAh-jl-FZL" secondAttribute="bottom" id="jc6-54-kYx"/>
+                                    <constraint firstAttribute="bottom" secondItem="cAh-jl-FZL" secondAttribute="bottom" id="lAF-CW-ynG"/>
+                                    <constraint firstItem="cAh-jl-FZL" firstAttribute="top" secondItem="DMD-lH-afV" secondAttribute="top" constant="8" id="la3-cK-UrF"/>
+                                    <constraint firstItem="cAh-jl-FZL" firstAttribute="top" secondItem="DMD-lH-afV" secondAttribute="topMargin" constant="8" id="nGQ-1E-YZk"/>
+                                    <constraint firstAttribute="bottom" secondItem="QYM-LF-pVb" secondAttribute="bottom" constant="24" id="xuF-LH-0zn"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1Xx-hD-Mya"/>
+                                        <exclude reference="9bU-DP-sNC"/>
+                                        <exclude reference="jc6-54-kYx"/>
+                                        <exclude reference="la3-cK-UrF"/>
+                                        <exclude reference="nGQ-1E-YZk"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DMD-lH-afV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="M0V-GD-FRj"/>
+                            <constraint firstAttribute="trailing" secondItem="DMD-lH-afV" secondAttribute="trailing" id="o9f-rM-nvy"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="DMD-lH-afV" secondAttribute="bottom" id="tr3-Gc-mtc"/>
+                            <constraint firstItem="DMD-lH-afV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vVQ-Up-cuW"/>
+                            <constraint firstItem="DMD-lH-afV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zVq-Cz-nMC"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="vVQ-Up-cuW"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="3uI-fY-gOr"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1117" y="387"/>
+        </scene>
+        <!--AquariumSetupVC-->
+        <scene sceneID="kwK-tZ-STw">
+            <objects>
+                <viewController title="AquariumSetupVC" modalTransitionStyle="flipHorizontal" id="MzK-2i-ZCx" customClass="SetupVC" customModule="AquaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nF4-tr-E17"/>
+                        <viewControllerLayoutGuide type="bottom" id="7nv-BT-KNj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="znf-hr-89y">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cichlid-tank-1" translatesAutoresizingMaskIntoConstraints="NO" id="WxT-y2-AG4">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eAl-uU-6pQ">
+                                <rect key="frame" x="28" y="76" width="544" height="29"/>
+                                <segments>
+                                    <segment title="Basic"/>
+                                    <segment title="Equipment"/>
+                                    <segment title="Water"/>
+                                    <segment title="Livestock"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="optionSelect:" destination="MzK-2i-ZCx" eventType="valueChanged" id="CDs-q7-jn9"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rJb-zx-0xY">
+                                <rect key="frame" x="28" y="124" width="544" height="456"/>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IX1-WJ-nGw" userLabel="Water Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="544" height="456"/>
+                                        <connections>
+                                            <segue destination="Ghj-v9-Eer" kind="embed" identifier="WaterVC" id="AM5-zR-XJ9"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMd-Sw-DGx" userLabel="Equipment Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="544" height="456"/>
+                                        <connections>
+                                            <segue destination="5DE-zh-brT" kind="embed" identifier="EquipmentVC" id="IMf-7i-fLe"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vwK-0m-wf4" userLabel="Basic Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="544" height="456"/>
+                                        <connections>
+                                            <segue destination="IY4-wf-JB1" kind="embed" identifier="basicVC" id="rxI-q8-cfk"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SU0-jP-HzM" userLabel="Livestock Container View">
+                                        <rect key="frame" x="0.0" y="0.0" width="544" height="456"/>
+                                        <connections>
+                                            <segue destination="SqV-p5-7B7" kind="embed" identifier="livestockVC" id="D3y-gs-Ieb"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="SU0-jP-HzM" firstAttribute="top" secondItem="rJb-zx-0xY" secondAttribute="top" id="1Za-gO-anj"/>
+                                    <constraint firstItem="vwK-0m-wf4" firstAttribute="top" secondItem="rJb-zx-0xY" secondAttribute="top" id="9ta-im-sOK"/>
+                                    <constraint firstAttribute="bottom" secondItem="lMd-Sw-DGx" secondAttribute="bottom" id="BTd-Cm-P7v"/>
+                                    <constraint firstAttribute="trailing" secondItem="vwK-0m-wf4" secondAttribute="trailing" id="ExH-cZ-Zhf"/>
+                                    <constraint firstItem="IX1-WJ-nGw" firstAttribute="top" secondItem="rJb-zx-0xY" secondAttribute="top" id="FPI-PU-xjJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="SU0-jP-HzM" secondAttribute="trailing" id="GaB-7M-x9n"/>
+                                    <constraint firstItem="lMd-Sw-DGx" firstAttribute="top" secondItem="rJb-zx-0xY" secondAttribute="top" id="Li4-kP-N9p"/>
+                                    <constraint firstItem="lMd-Sw-DGx" firstAttribute="leading" secondItem="IX1-WJ-nGw" secondAttribute="trailing" id="N1M-oX-6zn"/>
+                                    <constraint firstAttribute="bottom" secondItem="vwK-0m-wf4" secondAttribute="bottom" id="Qvj-mZ-A1v"/>
+                                    <constraint firstAttribute="trailing" secondItem="lMd-Sw-DGx" secondAttribute="trailing" id="TQs-Mc-hr6"/>
+                                    <constraint firstItem="vwK-0m-wf4" firstAttribute="top" secondItem="IX1-WJ-nGw" secondAttribute="bottom" id="XLl-J5-ta3"/>
+                                    <constraint firstItem="IX1-WJ-nGw" firstAttribute="leading" secondItem="rJb-zx-0xY" secondAttribute="leading" id="dny-p2-Yos"/>
+                                    <constraint firstItem="lMd-Sw-DGx" firstAttribute="leading" secondItem="rJb-zx-0xY" secondAttribute="leading" id="pSL-EH-fM2"/>
+                                    <constraint firstItem="SU0-jP-HzM" firstAttribute="leading" secondItem="rJb-zx-0xY" secondAttribute="leading" id="ppP-8f-XpY"/>
+                                    <constraint firstAttribute="trailing" secondItem="IX1-WJ-nGw" secondAttribute="trailing" id="qF9-Ez-4Zr"/>
+                                    <constraint firstAttribute="bottom" secondItem="SU0-jP-HzM" secondAttribute="bottom" id="rSN-Yy-QvM"/>
+                                    <constraint firstAttribute="bottom" secondItem="IX1-WJ-nGw" secondAttribute="bottom" id="yFv-4I-CK4"/>
+                                    <constraint firstItem="vwK-0m-wf4" firstAttribute="leading" secondItem="rJb-zx-0xY" secondAttribute="leading" id="zBY-2O-9OS"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="N1M-oX-6zn"/>
+                                        <exclude reference="XLl-J5-ta3"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="rJb-zx-0xY" secondAttribute="trailing" constant="8" id="2zP-nH-LSJ"/>
+                            <constraint firstItem="eAl-uU-6pQ" firstAttribute="leading" secondItem="znf-hr-89y" secondAttribute="leadingMargin" constant="8" id="4SF-Gf-Xsw"/>
+                            <constraint firstItem="eAl-uU-6pQ" firstAttribute="top" secondItem="nF4-tr-E17" secondAttribute="bottom" constant="12" id="BJl-nP-Gi9"/>
+                            <constraint firstItem="rJb-zx-0xY" firstAttribute="leading" secondItem="znf-hr-89y" secondAttribute="leadingMargin" constant="8" id="JBC-Zi-Zr9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WxT-y2-AG4" secondAttribute="trailing" constant="-20" id="P0z-R1-COe"/>
+                            <constraint firstItem="7nv-BT-KNj" firstAttribute="top" secondItem="WxT-y2-AG4" secondAttribute="bottom" id="QUH-0t-KnR"/>
+                            <constraint firstItem="7nv-BT-KNj" firstAttribute="top" secondItem="rJb-zx-0xY" secondAttribute="bottom" constant="20" id="dcP-Zo-Qn5"/>
+                            <constraint firstItem="rJb-zx-0xY" firstAttribute="top" secondItem="eAl-uU-6pQ" secondAttribute="bottom" constant="20" id="iLc-nD-KJ0"/>
+                            <constraint firstItem="7nv-BT-KNj" firstAttribute="top" secondItem="WxT-y2-AG4" secondAttribute="bottom" constant="32" id="qdE-MM-Cyd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eAl-uU-6pQ" secondAttribute="trailing" constant="8" id="taY-NW-dvG"/>
+                            <constraint firstItem="WxT-y2-AG4" firstAttribute="leading" secondItem="znf-hr-89y" secondAttribute="leadingMargin" constant="-20" id="vaR-kj-6ty"/>
+                            <constraint firstItem="WxT-y2-AG4" firstAttribute="top" secondItem="nF4-tr-E17" secondAttribute="bottom" id="xEW-Jf-LI2"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="qdE-MM-Cyd"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="basicVC" destination="vwK-0m-wf4" id="3D7-9c-Wqt"/>
+                        <outlet property="equipmentVC" destination="lMd-Sw-DGx" id="JeI-Jg-W0u"/>
+                        <outlet property="livestockVC" destination="SU0-jP-HzM" id="lae-aM-4nK"/>
+                        <outlet property="segmentedControl" destination="eAl-uU-6pQ" id="Vjk-yy-NJw"/>
+                        <outlet property="waterVC" destination="IX1-WJ-nGw" id="HZF-C8-KAg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ehM-mS-PTp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1807" y="387"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4RU-HQ-pfy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pyr-vO-IfM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="I5A-tw-lC6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="9Gj-Ng-Dm3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gMH-fL-dmR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="305" y="387"/>
+        </scene>
+        <!--WaterVC-->
+        <scene sceneID="vFT-mb-ji2">
+            <objects>
+                <viewController id="Ghj-v9-Eer" userLabel="WaterVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rSf-HF-3AR">
+                        <rect key="frame" x="0.0" y="0.0" width="544" height="456"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gn7-Je-XNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2464" y="686"/>
+        </scene>
+        <!--EquipmentVC-->
+        <scene sceneID="F1h-zQ-v55">
+            <objects>
+                <viewController id="5DE-zh-brT" userLabel="EquipmentVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iow-IN-SZv">
+                        <rect key="frame" x="0.0" y="0.0" width="544" height="456"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.1176470588" green="0.53333333329999999" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oca-ab-dbh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2464.5" y="175"/>
+        </scene>
+        <!--Aquarium Basic Configuration-->
+        <scene sceneID="Vf3-Xo-fjJ">
+            <objects>
+                <viewController title="Aquarium Basic Configuration" id="IY4-wf-JB1" customClass="BasicConfigVC" customModule="AquaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0kK-vx-PJr">
+                        <rect key="frame" x="0.0" y="0.0" width="544" height="456"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What shape is your aquarium?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQQ-7Z-duk">
+                                <rect key="frame" x="29" y="32" width="247" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="nbR-wh-eHd"/>
+                                    <constraint firstAttribute="width" constant="247" id="tap-8G-hx0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyO-qp-ZgK">
+                                <rect key="frame" x="0.0" y="83" width="544" height="154"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="154" id="Ep6-mI-Vhk"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="0kK-vx-PJr" id="hOL-xg-fGN"/>
+                                    <outlet property="delegate" destination="0kK-vx-PJr" id="XmI-fU-rxa"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gQQ-7Z-duk" firstAttribute="leading" secondItem="0kK-vx-PJr" secondAttribute="leadingMargin" constant="9" id="BGw-FX-imp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gyO-qp-ZgK" secondAttribute="trailing" constant="-20" id="FGT-YY-USQ"/>
+                            <constraint firstItem="gyO-qp-ZgK" firstAttribute="leading" secondItem="0kK-vx-PJr" secondAttribute="leadingMargin" constant="-20" id="JMW-hq-NQN"/>
+                            <constraint firstItem="gQQ-7Z-duk" firstAttribute="top" secondItem="0kK-vx-PJr" secondAttribute="topMargin" constant="32" id="w0Q-iu-6Lo"/>
+                            <constraint firstItem="gyO-qp-ZgK" firstAttribute="top" secondItem="gQQ-7Z-duk" secondAttribute="bottom" constant="30" id="who-vE-wFN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="shapePkr" destination="gyO-qp-ZgK" id="v0d-T8-FPy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bvu-Hb-53X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2464" y="-338"/>
+        </scene>
+        <!--LivestockVC-->
+        <scene sceneID="5hm-El-Nir">
+            <objects>
+                <viewController id="SqV-p5-7B7" userLabel="LivestockVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Orb-qu-N7h">
+                        <rect key="frame" x="0.0" y="0.0" width="544" height="456"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.37772036580000001" green="0.83137254900000002" blue="0.80213236320000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="043-OS-nI3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2464" y="1200"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Cichlid-tank-1" width="571" height="378"/>
+    </resources>
 </document>
