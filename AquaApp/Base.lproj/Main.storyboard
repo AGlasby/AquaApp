@@ -265,38 +265,108 @@
                         <rect key="frame" x="0.0" y="0.0" width="544" height="456"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What shape is your aquarium?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQQ-7Z-duk">
-                                <rect key="frame" x="29" y="32" width="247" height="21"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VU2-0X-NMy">
+                                <rect key="frame" x="28" y="32" width="488" height="416"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What shape is your aquarium?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQQ-7Z-duk">
+                                        <rect key="frame" x="0.0" y="0.0" width="247" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="nbR-wh-eHd"/>
+                                            <constraint firstAttribute="width" constant="247" id="tap-8G-hx0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyO-qp-ZgK">
+                                        <rect key="frame" x="0.0" y="26" width="488" height="154"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="154" id="Ep6-mI-Vhk"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="0kK-vx-PJr" id="hOL-xg-fGN"/>
+                                            <outlet property="delegate" destination="0kK-vx-PJr" id="XmI-fU-rxa"/>
+                                        </connections>
+                                    </pickerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Od-H7-OzV">
+                                        <rect key="frame" x="0.0" y="185" width="488" height="21"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you know the volume of your aquarium?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGP-5f-iPO">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="247" id="1WO-L7-TuY"/>
+                                                    <constraint firstAttribute="height" constant="21" id="lOK-kG-LJF"/>
+                                                    <constraint firstAttribute="width" constant="300" id="oZB-48-T7k"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="1WO-L7-TuY"/>
+                                                    </mask>
+                                                </variation>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="7zp-Qe-Y9y">
+                                                <rect key="frame" x="415" y="0.0" width="73" height="22"/>
+                                                <segments>
+                                                    <segment title="Yes"/>
+                                                    <segment title="No"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="optionSelect:" destination="IY4-wf-JB1" eventType="valueChanged" id="Gy4-gG-fN4"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VHI-6m-sen" userLabel="VolumeEntryStackView">
+                                        <rect key="frame" x="0.0" y="211" width="488" height="21"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Enter the volume in litres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nH4-tC-cX5">
+                                                <rect key="frame" x="0.0" y="0.0" width="300" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="L8u-8g-GtQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hyX-Gi-qfC">
+                                                <rect key="frame" x="310" y="0.0" width="178" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                        </subviews>
+                                    </stackView>
+                                    <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ens-ID-SKF" userLabel="ParameterPickerView">
+                                        <rect key="frame" x="0.0" y="237" width="488" height="180"/>
+                                    </pickerView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="nbR-wh-eHd"/>
-                                    <constraint firstAttribute="width" constant="247" id="tap-8G-hx0"/>
+                                    <constraint firstAttribute="trailing" secondItem="7Od-H7-OzV" secondAttribute="trailing" id="D1r-Dv-WiI"/>
+                                    <constraint firstItem="VHI-6m-sen" firstAttribute="leading" secondItem="VU2-0X-NMy" secondAttribute="leading" id="OH0-0O-haS"/>
+                                    <constraint firstItem="gyO-qp-ZgK" firstAttribute="leading" secondItem="VU2-0X-NMy" secondAttribute="leading" id="Xbg-ML-Nxv"/>
+                                    <constraint firstItem="7Od-H7-OzV" firstAttribute="leading" secondItem="VU2-0X-NMy" secondAttribute="leading" id="fUR-kn-uKh"/>
+                                    <constraint firstAttribute="trailing" secondItem="ens-ID-SKF" secondAttribute="trailing" id="oFn-rJ-0ff"/>
+                                    <constraint firstItem="ens-ID-SKF" firstAttribute="leading" secondItem="VU2-0X-NMy" secondAttribute="leading" id="oj1-BH-0JS"/>
+                                    <constraint firstAttribute="trailing" secondItem="VHI-6m-sen" secondAttribute="trailing" id="pRO-mh-Mrp"/>
+                                    <constraint firstAttribute="trailing" secondItem="gyO-qp-ZgK" secondAttribute="trailing" id="sbB-Ht-347"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyO-qp-ZgK">
-                                <rect key="frame" x="0.0" y="83" width="544" height="154"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="154" id="Ep6-mI-Vhk"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="dataSource" destination="0kK-vx-PJr" id="hOL-xg-fGN"/>
-                                    <outlet property="delegate" destination="0kK-vx-PJr" id="XmI-fU-rxa"/>
-                                </connections>
-                            </pickerView>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="gQQ-7Z-duk" firstAttribute="leading" secondItem="0kK-vx-PJr" secondAttribute="leadingMargin" constant="9" id="BGw-FX-imp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="gyO-qp-ZgK" secondAttribute="trailing" constant="-20" id="FGT-YY-USQ"/>
-                            <constraint firstItem="gyO-qp-ZgK" firstAttribute="leading" secondItem="0kK-vx-PJr" secondAttribute="leadingMargin" constant="-20" id="JMW-hq-NQN"/>
-                            <constraint firstItem="gQQ-7Z-duk" firstAttribute="top" secondItem="0kK-vx-PJr" secondAttribute="topMargin" constant="32" id="w0Q-iu-6Lo"/>
-                            <constraint firstItem="gyO-qp-ZgK" firstAttribute="top" secondItem="gQQ-7Z-duk" secondAttribute="bottom" constant="30" id="who-vE-wFN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VU2-0X-NMy" secondAttribute="trailing" constant="8" id="G2W-XY-Bb3"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="VU2-0X-NMy" secondAttribute="bottom" constant="8" id="bDb-10-bV0"/>
+                            <constraint firstItem="VU2-0X-NMy" firstAttribute="top" secondItem="0kK-vx-PJr" secondAttribute="topMargin" constant="32" id="vGI-Y8-2Pv"/>
+                            <constraint firstItem="VU2-0X-NMy" firstAttribute="leading" secondItem="0kK-vx-PJr" secondAttribute="leadingMargin" constant="8" id="yPt-zj-nBG"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="optionSelector" destination="7zp-Qe-Y9y" id="wDa-Hi-EiI"/>
                         <outlet property="shapePkr" destination="gyO-qp-ZgK" id="v0d-T8-FPy"/>
+                        <outlet property="volumePkr" destination="ens-ID-SKF" id="3i0-9n-HaY"/>
+                        <outlet property="volumeStack" destination="VHI-6m-sen" id="5aB-6D-i0W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvu-Hb-53X" userLabel="First Responder" sceneMemberID="firstResponder"/>

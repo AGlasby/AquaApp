@@ -19,6 +19,7 @@ class SetupVC: UIViewController {
     @IBOutlet weak var livestockVC: UIView!
 
 
+
     @IBOutlet weak var segmentedControl: UISegmentedControl!
 
     override func viewDidLoad() {

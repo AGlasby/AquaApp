@@ -11,6 +11,11 @@ import UIKit
 class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var shapePkr: UIPickerView!
+    @IBOutlet weak var volumePkr: UIPickerView!
+    @IBOutlet weak var volumeStack: UIStackView!
+//    @IBOutlet weak var volumeLbl: UILabel!
+
+    @IBOutlet weak var optionSelector: UISegmentedControl!
 
     var shapePicker: UIPickerView!
 
@@ -30,6 +35,11 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 
         // Do any additional setup after loading the view.
 
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        volumeStack.hidden = true
+        volumePkr.hidden = true
     }
 
 
@@ -77,5 +87,19 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
 
         return 150.0
+    }
+
+    @IBAction func optionSelect(sender: UISegmentedControl) {
+
+        switch sender.selectedSegmentIndex {
+        case 0:
+            volumeStack.hidden = false
+            volumePkr.hidden = true
+        case 1:
+            volumeStack.hidden = true
+            volumePkr.hidden = false
+        default:
+            break;
+        }
     }
 }
