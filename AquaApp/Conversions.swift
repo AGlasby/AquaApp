@@ -47,3 +47,6 @@ func celciusToFarenheit(temperature: Double) -> Double {
 func farenheitToCelcius(temperature: Double) -> Double {
     return (temperature - 32) * 5 / 9
 }
+
+
+

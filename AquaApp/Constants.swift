@@ -21,9 +21,16 @@ let USGALLON_TO_GALLON = 1 / GALLON_TO_USGALLON
 
 let AQUARIUM_TYPE = ["Marine", "Tropical", "Brackish", "Unheated"]
 
-let AQUARIUM_SHAPES = ["Cuboid", "Sphere", "Bow Fronted", "Column", "Other"]
-let AQUARIUM_IMAGES = ["cuboid.png", "sphere.png", "bow_fronted.png", "column.png", "other.png"]
+let AQUARIUM_SHAPES = [
+        "cuboid": ["length", "width", "height"],
+        "globe": ["radius"],
+        "bow fronted": ["length", "width", "height", "sagitta"],
+        "column": ["radius", "height"],
+        "corner": ["radius", "height"],
+        "other": [""]]
 
+let AQUARIUM_IMAGES = ["cuboid.png", "globe.png", "bow_fronted.png", "column.png", "corner.png", "other.png"]
 
+    let NOT_STARTED = -1
 
 
