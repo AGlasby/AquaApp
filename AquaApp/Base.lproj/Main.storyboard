@@ -423,6 +423,7 @@
                         <outlet property="volumePkr" destination="1OK-SS-ffm" id="1E0-8g-BEp"/>
                         <outlet property="volumePkrStack" destination="toR-KQ-Qlw" id="YRn-1m-u12"/>
                         <outlet property="volumeStack" destination="VHI-6m-sen" id="5aB-6D-i0W"/>
+                        <outlet property="volumeTxt" destination="hyX-Gi-qfC" id="bRP-QH-olO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvu-Hb-53X" userLabel="First Responder" sceneMemberID="firstResponder"/>

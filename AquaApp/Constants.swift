@@ -22,11 +22,11 @@ let USGALLON_TO_GALLON = 1 / GALLON_TO_USGALLON
 let AQUARIUM_TYPE = ["Marine", "Tropical", "Brackish", "Unheated"]
 
 let AQUARIUM_SHAPES = [
-        "cuboid": ["length", "width", "height"],
+        "cuboid": ["length", "width", "depth"],
         "globe": ["radius"],
-        "bow fronted": ["length", "width", "height", "sagitta"],
-        "column": ["radius", "height"],
-        "corner": ["radius", "height"],
+        "bow fronted": ["length", "width", "depth", "sagitta"],
+        "column": ["radius", "depth"],
+        "corner": ["radius", "depth"],
         "other": [""]]
 
 let AQUARIUM_IMAGES = ["cuboid.png", "globe.png", "bow_fronted.png", "column.png", "corner.png", "other.png"]

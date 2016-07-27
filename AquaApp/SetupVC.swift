@@ -9,32 +9,29 @@
 import UIKit
 
 
-
-
 class SetupVC: UIViewController {
 
     @IBOutlet weak var waterVC: UIView!
     @IBOutlet weak var equipmentVC: UIView!
     @IBOutlet weak var basicVC: UIView!
     @IBOutlet weak var livestockVC: UIView!
-
-
-
     @IBOutlet weak var segmentedControl: UISegmentedControl!
 
+
     override func viewDidLoad() {
+
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
 
-        initSegmentController()
-
+//        initSegmentController()
     }
 
+
     override func viewDidAppear(animated: Bool) {
+
         super.viewDidAppear(true)
         initSegmentController()
-
     }
 
 
@@ -60,17 +57,19 @@ class SetupVC: UIViewController {
     }
 
 
+    func initSegmentController() {
+
+        segmentedControl.selectedSegmentIndex = 0
+        hideSegmentVcs()
+        basicVC.hidden = false
+    }
+
+
     func hideSegmentVcs() {
         
         livestockVC.hidden = true
         basicVC.hidden = true
         equipmentVC.hidden = true
         waterVC.hidden = true
-    }
-
-    func initSegmentController() {
-        segmentedControl.selectedSegmentIndex = 0
-        hideSegmentVcs()
-        basicVC.hidden = false
     }
 }

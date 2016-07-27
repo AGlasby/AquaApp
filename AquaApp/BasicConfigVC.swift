@@ -16,6 +16,7 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBOutlet weak var volumePkrStack: UIStackView!
     @IBOutlet weak var volumeStack: UIStackView!
     @IBOutlet weak var volumeLbl: UILabel!
+    @IBOutlet weak var volumeTxt: UITextField!
     @IBOutlet weak var dimensionLbl: UILabel!
     @IBOutlet weak var optionSelector: UISegmentedControl!
     @IBOutlet weak var nextBtn: UIButton!
@@ -24,11 +25,11 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     var aquariumShapesNames = Array(AQUARIUM_SHAPES.keys)
     var aquariumShape = ""
     var dimensions = [
-        "length": 0,
-        "height": 0,
-        "width": 0,
-        "sagitta": 0,
-        "radius": 0
+        "length": 0.00,
+        "depth": 0.00,
+        "width": 0.00,
+        "sagitta": 0.00,
+        "radius": 0.00
     ]
 
     let shapeComponentCount = 1
@@ -46,7 +47,7 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     let unitsComponent = 2
     let unitsComponentValues = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-
+    var volumeKnown: Bool!
     var step = 0
     var hundreds = "0"
     var tens = "0"
@@ -61,7 +62,6 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         shapePkr.delegate = self
         volumePkr.dataSource = self
         volumePkr.delegate = self
-
     }
 
 
@@ -72,7 +72,6 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         nextBtn.hidden = true
         initPickerRows(volumeComponentCount)
         aquariumShape = aquariumShapesNames[0]
-
     }
 
 
@@ -198,10 +197,12 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 
         switch sender.selectedSegmentIndex {
         case 0:
+            volumeKnown = true
             volumeStack.hidden = false
             volumePkrStack.hidden = true
             nextBtn.hidden = false
         case 1:
+            volumeKnown = false
             volumeStack.hidden = true
             volumePkrStack.hidden = false
             nextBtn.hidden = false
@@ -217,6 +218,7 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 
     @IBAction func nextTouched(sender: UIButton) {
 
+        if !volumeKnown {
         switch aquariumShape {
         case "cuboid":
             getAquariumDimensions()
@@ -233,6 +235,11 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         default:
             break
         }
+        } else {
+            let volume = Double(volumeTxt.text!)
+            myAquarium.updateVolume(volume!)
+            notification()
+        }
     }
 
 
@@ -240,13 +247,15 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 
         let shapeDims = AQUARIUM_SHAPES[aquariumShape]
         let nextDimension = nextStep(step, dimension: shapeDims!)
-        dimensions[shapeDims![step-1]] = Int("\(hundreds)\(tens)\(units)")
+        dimensions[shapeDims![step-1]] = Double("\(hundreds)\(tens)\(units)")
         print(dimensions)
         if nextDimension != "Complete" {
             dimensionLbl.text = "Please enter the \(nextDimension):"
         } else {
             dimensionLbl.hidden = true
+            calculateAquariumVolume(aquariumShape, dimensions: dimensions)
             print("Stop")
+            notification()
         }
     }
 
@@ -261,6 +270,43 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             step += 1
             return "Complete"
         }
+    }
+
+    func calculateAquariumVolume(shape: String, dimensions: Dictionary<String, Double>) {
+
+        switch shape {
+        case "cuboid":
+             let volume = myAquarium.calculateVolume(dimensions["length"]!, width: dimensions["width"]!, depth: dimensions["depth"]!)
+            myAquarium.updateVolume(volume)
+        case "globe":
+            let volume = myAquarium.calculateVolume((dimensions["radius"]! * 2))
+            myAquarium.updateVolume(volume)
+        case "bow fronted":
+            let volume = myAquarium.calculateVolume(dimensions["length"]!, width: dimensions["width"]!, depth: dimensions["depth"]!, sagitta: dimensions["sagitta"]!)
+            myAquarium.updateVolume(volume)
+        case "column":
+            let volume = myAquarium.calculateVolume((dimensions["radius"]! * 2), depth: dimensions["depth"]!)
+            myAquarium.updateVolume(volume)
+        case "corner":
+            let volume = myAquarium.calculateVolume(dimensions["radius"]!, height: dimensions["depth"]!)
+            myAquarium.updateVolume(volume)
+        case "other":
+            let volume = 0.00
+            myAquarium.updateVolume(volume)
+        default:
+            break
+        }
+    }
+
+    func notification() {
+        nextBtn.hidden = true
+
+        let alertController = UIAlertController(title: "Basic set-up is complete", message: "Select a different tab to continue with set-up or Back to view data", preferredStyle: UIAlertControllerStyle.Alert)
+
+        let defaultAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil)
+        alertController.addAction(defaultAction)
+        presentViewController(alertController, animated: true, completion: nil)
+
     }
 }
 
