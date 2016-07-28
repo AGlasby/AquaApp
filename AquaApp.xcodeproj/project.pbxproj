@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7155B9D1D4A5459001EF39D /* Water.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7155B9C1D4A5459001EF39D /* Water.swift */; };
 		E72153851D42034900E7CD47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72153841D42034900E7CD47 /* AppDelegate.swift */; };
 		E72153871D42034900E7CD47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72153861D42034900E7CD47 /* ViewController.swift */; };
 		E721538A1D42034900E7CD47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72153881D42034900E7CD47 /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E7155B9C1D4A5459001EF39D /* Water.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Water.swift; sourceTree = "<group>"; };
 		E72153811D42034900E7CD47 /* AquaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AquaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E72153841D42034900E7CD47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E72153861D42034900E7CD47 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				E721539E1D4203BC00E7CD47 /* Aquarium.swift */,
+				E7155B9C1D4A5459001EF39D /* Water.swift */,
 				E7C1C2241D4916AC007D1F13 /* waterCell.swift */,
 			);
 			name = Model;
@@ -161,6 +164,7 @@
 					E72153801D42034900E7CD47 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = HPS8LY3VR7;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -202,6 +206,7 @@
 			files = (
 				E72153A11D4211C700E7CD47 /* Constants.swift in Sources */,
 				E7C1C2251D4916AC007D1F13 /* waterCell.swift in Sources */,
+				E7155B9D1D4A5459001EF39D /* Water.swift in Sources */,
 				E77E33781D4274C800A05B9A /* SetupVC.swift in Sources */,
 				E721538D1D42034900E7CD47 /* AquaApp.xcdatamodeld in Sources */,
 				E72153871D42034900E7CD47 /* ViewController.swift in Sources */,
@@ -328,6 +333,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = glasby.AquaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -339,6 +345,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = glasby.AquaApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

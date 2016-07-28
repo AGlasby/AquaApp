@@ -11,6 +11,7 @@ import UIKit
 class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     var waterParamColView: UICollectionView!
+    var waterTests: Water!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,21 +22,35 @@ class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         waterParamColView.dataSource = self
     }
 
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-    }
-
-
-    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-
-    }
-
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-
-    }
-
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        
         return 1
     }
+    
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return myAquarium.water.waterTests.count
+    }
+  
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("WaterCell", forIndexPath: indexPath) as? WaterCell {
+                let water: Water!
+//            water =
+        
+            return cell
+        } else {
+            return UICollectionViewCell()
+        }
+        
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+
 
 }

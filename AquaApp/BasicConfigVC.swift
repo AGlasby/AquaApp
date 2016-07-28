@@ -84,9 +84,7 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         }
     }
 
-
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-
         switch pickerView {
         case shapePkr:
             return shapeComponentCount
@@ -96,6 +94,7 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             return 0
         }
     }
+
 
 
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
@@ -120,7 +119,7 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     }
 
 
-    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusingView view: UIView?) -> UIView {
+    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
 
         switch pickerView {
         case shapePkr:
@@ -145,7 +144,7 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 
     func setLabel(label: String) -> UIView {
 
-        let shapeLbl: UILabel = UILabel(frame: CGRectMake(0, 0, 100, 24))
+        let shapeLbl: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 24))
         shapeLbl.backgroundColor = UIColor.clearColor()
         shapeLbl.text = label
         return shapeLbl

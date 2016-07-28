@@ -8,17 +8,25 @@
 
 import Foundation
 
-//import UIKit
-//
-//class WaterCell: UICollectionViewCell {
-//
-//    @IBOutlet weak var thumbImg: UIImageView!
-//    @IBOutlet weak var nameLbl: UILabel!
-//
+import UIKit
+
+class WaterCell: UICollectionViewCell {
+    var water: Water!
+
+    @IBOutlet weak var thumbImg: UIImageView!
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        layer.cornerRadius = 5.0
+    }
+
 //    func configureCell(test: waterTest) {
-//        self. = waterTest
+//        self.water = waterTest
 //
-//        thumbImg.image = UIImage(named: "\(self.pokemon.pokedexId)")
+//        thumbImg.image = UIImage(named: "")
 //
 //    }
-//}
+
+
+}

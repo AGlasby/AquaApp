@@ -13,9 +13,15 @@ class Aquarium {
     private var _name: String!
     private var _volume: Double!
     private var _type: String!
+    
+    private var _water = Water()
 
     var volume: Double {
         return _volume
+    }
+    
+    var water: Water {
+        return _water
     }
 
     init(name: String) {
@@ -83,6 +89,8 @@ class Aquarium {
         let volumeOfColumn = area * depth / LITRE_CONVERT
         return volumeOfColumn
     }
+    
+    
 
 
 }

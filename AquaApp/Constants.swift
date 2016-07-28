@@ -33,12 +33,19 @@ let AQUARIUM_IMAGES = ["cuboid.png", "globe.png", "bow_fronted.png", "column.png
 
     let NOT_STARTED = -1
 
-let WATER_TESTS = [
+
+struct WaterTest {
+    var test: String
+    var status: Bool
+    var img: String
+    
+}
+
+let WaterTests = [
         "ph": "ph_button.png",
         "Ammonia": "ammonia_button.png",
         "Nitrite": "nitrite_button.png",
         "Nitrate": "nitrate_button",
         "kh": "kh_button",
         "gh": "gh_button"
-]
-
+    ]
