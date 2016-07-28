@@ -232,21 +232,66 @@
         <!--WaterVC-->
         <scene sceneID="vFT-mb-ji2">
             <objects>
-                <viewController id="Ghj-v9-Eer" userLabel="WaterVC" sceneMemberID="viewController">
+                <viewController id="Ghj-v9-Eer" userLabel="WaterVC" customClass="waterConfigVC" customModule="AquaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gOP-uI-yyC"/>
+                        <viewControllerLayoutGuide type="bottom" id="GPM-zw-HEg"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rSf-HF-3AR">
                         <rect key="frame" x="0.0" y="0.0" width="544" height="456"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cxe-BF-Ps5">
+                                <rect key="frame" x="5" y="6" width="534" height="128"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5j2-bw-cuh">
+                                    <size key="itemSize" width="106" height="88"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ku1-Lw-acR">
+                                        <rect key="frame" x="0.0" y="0.0" width="106" height="88"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="106" height="88"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ph_button" translatesAutoresizingMaskIntoConstraints="NO" id="SzP-LC-ZEa">
+                                                    <rect key="frame" x="8" y="8" width="90" height="72"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="72" id="89M-3Q-S6n"/>
+                                                        <constraint firstAttribute="width" constant="90" id="iWH-if-VQr"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="SzP-LC-ZEa" firstAttribute="trailing" secondItem="ku1-Lw-acR" secondAttribute="trailingMargin" id="5fg-QO-3Va"/>
+                                            <constraint firstItem="SzP-LC-ZEa" firstAttribute="leading" secondItem="ku1-Lw-acR" secondAttribute="leadingMargin" id="HB6-oW-kQj"/>
+                                            <constraint firstItem="SzP-LC-ZEa" firstAttribute="top" secondItem="ku1-Lw-acR" secondAttribute="topMargin" id="Uc2-9N-xMf"/>
+                                            <constraint firstItem="SzP-LC-ZEa" firstAttribute="bottom" secondItem="ku1-Lw-acR" secondAttribute="bottomMargin" id="bqd-IF-eUK"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gn7-Je-XNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2464" y="686"/>
+            <point key="canvasLocation" x="2464" y="690"/>
         </scene>
         <!--EquipmentVC-->
         <scene sceneID="F1h-zQ-v55">
             <objects>
                 <viewController id="5DE-zh-brT" userLabel="EquipmentVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9Kg-q7-ych"/>
+                        <viewControllerLayoutGuide type="bottom" id="bvn-Nn-jSk"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iow-IN-SZv">
                         <rect key="frame" x="0.0" y="0.0" width="544" height="456"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,6 +306,10 @@
         <scene sceneID="Vf3-Xo-fjJ">
             <objects>
                 <viewController title="Aquarium Basic Configuration" id="IY4-wf-JB1" customClass="BasicConfigVC" customModule="AquaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z0T-Nj-HXH"/>
+                        <viewControllerLayoutGuide type="bottom" id="t1e-IM-Cgj"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0kK-vx-PJr">
                         <rect key="frame" x="0.0" y="0.0" width="544" height="456"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -286,7 +335,7 @@
                                             <constraint firstAttribute="width" constant="247" id="tap-8G-hx0"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyO-qp-ZgK">
@@ -310,7 +359,7 @@
                                                     <constraint firstAttribute="width" constant="300" id="oZB-48-T7k"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="default">
                                                     <mask key="constraints">
@@ -342,7 +391,7 @@
                                                     <constraint firstAttribute="width" constant="300" id="L8u-8g-GtQ"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hyX-Gi-qfC">
@@ -361,7 +410,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please enter the length:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52v-Lg-wOs">
                                                 <rect key="frame" x="0.0" y="0.0" width="182" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DbS-35-vAL">
@@ -376,7 +425,7 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="cm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EC1-Du-WAL">
                                                         <rect key="frame" x="245" y="52" width="24" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -428,12 +477,16 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvu-Hb-53X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2464" y="-338"/>
+            <point key="canvasLocation" x="2459" y="-377"/>
         </scene>
         <!--LivestockVC-->
         <scene sceneID="5hm-El-Nir">
             <objects>
                 <viewController id="SqV-p5-7B7" userLabel="LivestockVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eWj-X5-iIO"/>
+                        <viewControllerLayoutGuide type="bottom" id="cpZ-7d-uUv"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Orb-qu-N7h">
                         <rect key="frame" x="0.0" y="0.0" width="544" height="456"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -447,5 +500,6 @@
     </scenes>
     <resources>
         <image name="Cichlid-tank-1" width="571" height="378"/>
+        <image name="ph_button" width="127" height="76"/>
     </resources>
 </document>
