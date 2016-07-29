@@ -42,10 +42,10 @@ struct WaterTest {
 }
 
 let WaterTests = [
-        "ph": "ph_button.png",
-        "Ammonia": "ammonia_button.png",
-        "Nitrite": "nitrite_button.png",
-        "Nitrate": "nitrate_button",
-        "kh": "kh_button",
-        "gh": "gh_button"
+        "ph": "ph.png",
+        "ammonia": "ammonia.png",
+        "nitrite": "nitrite.png",
+        "nitrate": "nitrate_png",
+        "kh": "kh.png",
+        "gh": "gh.png"
     ]

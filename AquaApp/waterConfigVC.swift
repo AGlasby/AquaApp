@@ -10,7 +10,9 @@ import UIKit
 
 class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    var waterParamColView: UICollectionView!
+    @IBOutlet weak var waterColView: UICollectionView!
+    
+//    var waterParamColView: UICollectionView!
     var waterTests: Water!
 
     override func viewDidLoad() {
@@ -18,8 +20,8 @@ class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionVie
 
         // Do any additional setup after loading the view.
 
-        waterParamColView.delegate = self
-        waterParamColView.dataSource = self
+        waterColView.delegate = self
+        waterColView.dataSource = self
     }
 
     private func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -35,10 +37,10 @@ class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionVie
   
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WaterCell", for: indexPath as IndexPath) as? WaterCell {
-//                let water: Water!
-//            water =
         
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WaterCell", for: indexPath as IndexPath) as? WaterCell {
+            let test = myAquarium.water.waterTests[indexPath.row]
+            cell.configureCell(test: test)
             return cell
         } else {
             return UICollectionViewCell()
@@ -48,9 +50,23 @@ class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
-    
 
+        let test = myAquarium.water.waterTests[indexPath.row]
+        let testsMonitored = myAquarium.water.testsMonitored
+        if testsMonitored[test] == false {
+            print(test)
+            myAquarium.water.UpdateTestStatus(test: test, status: true)
+            print(myAquarium.water.testsMonitored)
+            let cell = collectionView.cellForItem(at: indexPath)
+            cell?.layer.borderWidth = 2.0
+            cell?.layer.borderColor = UIColor.white().cgColor
+        } else {
+            myAquarium.water.UpdateTestStatus(test: test, status: false)
+            print(myAquarium.water.testsMonitored)
+            let cell = collectionView.cellForItem(at: indexPath)
+            cell?.layer.borderWidth = 2.0
+            cell?.layer.borderColor = UIColor.clear().cgColor
+        }
+        }
 
 }

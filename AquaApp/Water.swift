@@ -33,13 +33,13 @@ class Water {
 
     
     var testsMonitored: Dictionary<String, Bool> {
-        
         var testsMonitored = Dictionary<String, Bool>()
         for test in 0..._waterTests.count - 1 {
             testsMonitored[_waterTests[test].test] = _waterTests[test].status
         }
         return testsMonitored
     }
+    
     
     var testResults: [testResult] {
         return _testResults
@@ -56,6 +56,17 @@ class Water {
         }
 
     }
+ 
+    
+    func UpdateTestStatus(test: String, status: Bool) {
+        for index in 0..._waterTests.count - 1 {
+            var testStruct = _waterTests[index]
+            if testStruct.test == test {
+                testStruct.status = status
+                _waterTests[index] = testStruct
+            }
+        }
+    }
     
     
     func addTestResult(test: String, date: NSDate, result: Double) {
@@ -65,6 +76,7 @@ class Water {
         newResult.result = result
         _testResults.append(newResult)
     }
+    
     
     func resultsForTest(test: String) -> [testResult] {
         var resultsForTests: [testResult] = []

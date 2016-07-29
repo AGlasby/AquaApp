@@ -11,22 +11,19 @@ import Foundation
 import UIKit
 
 class WaterCell: UICollectionViewCell {
-    var water: Water!
 
-    @IBOutlet weak var thumbImg: UIImageView!
+    @IBOutlet weak var testImg: UIImageView!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         layer.cornerRadius = 5.0
+        
     }
 
-//    func configureCell(test: waterTest) {
-//        self.water = waterTest
-//
-//        thumbImg.image = UIImage(named: "")
-//
-//    }
+    func configureCell(test: String) {
 
+        testImg.image = UIImage(named: "\(test).png")
 
+    }
 }
