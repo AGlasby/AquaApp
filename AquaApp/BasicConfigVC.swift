@@ -118,7 +118,7 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 
 
 
-    func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
 
         switch pickerView {
         case shapePkr:
@@ -150,7 +150,7 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     }
 
 
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
 
         switch pickerView {
         case shapePkr:
@@ -172,13 +172,13 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     }
 
 
-    func pickerView(pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
 
         return 50.0
     }
 
 
-    func pickerView(pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+    func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
 
         switch pickerView {
         case shapePkr:
@@ -191,7 +191,7 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     }
 
 
-    @IBAction func optionSelect(sender: UISegmentedControl) {
+    @IBAction func volKnownSel(sender: UISegmentedControl) {
 
         switch sender.selectedSegmentIndex {
         case 0:

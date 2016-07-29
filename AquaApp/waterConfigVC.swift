@@ -10,7 +10,9 @@ import UIKit
 
 class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    var waterParamColView: UICollectionView!
+    @IBOutlet weak var waterColView: UICollectionView!
+    
+//    var waterParamColView: UICollectionView!
     var waterTests: Water!
 
     override func viewDidLoad() {
@@ -18,8 +20,8 @@ class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionVie
 
         // Do any additional setup after loading the view.
 
-        waterParamColView.delegate = self
-        waterParamColView.dataSource = self
+        waterColView.delegate = self
+        waterColView.dataSource = self
     }
 
     private func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -35,10 +37,10 @@ class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionVie
   
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WaterCell", for: indexPath as IndexPath) as? WaterCell {
-//                let water: Water!
-//            water =
         
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WaterCell", for: indexPath as IndexPath) as? WaterCell {
+            let test = myAquarium.water.waterTests[indexPath.row]
+            cell.configureCell(test: test)
             return cell
         } else {
             return UICollectionViewCell()
