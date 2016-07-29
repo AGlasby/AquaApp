@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         
         print(myAquarium.water.waterTests)
         print(myAquarium.water.testsMonitored)
+        myAquarium.water.addTestResult(test: "ph", date: NSDate(), result: 7.8)
+        print(myAquarium.water.resultsForTest(test: "ph"))
 
     }
 }

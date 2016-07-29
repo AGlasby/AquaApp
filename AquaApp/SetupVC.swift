@@ -28,7 +28,7 @@ class SetupVC: UIViewController {
     }
 
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
 
         super.viewDidAppear(true)
         initSegmentController()
@@ -41,16 +41,16 @@ class SetupVC: UIViewController {
         switch sender.selectedSegmentIndex {
         case 0:
             hideSegmentVcs()
-            basicVC.hidden = false
+            basicVC.isHidden = false
         case 1:
             hideSegmentVcs()
-            equipmentVC.hidden = false
+            equipmentVC.isHidden = false
         case 2:
             hideSegmentVcs()
-            waterVC.hidden = false
+            waterVC.isHidden = false
         case 3:
             hideSegmentVcs()
-            livestockVC.hidden = false
+            livestockVC.isHidden = false
         default:
             break;
         }
@@ -61,15 +61,15 @@ class SetupVC: UIViewController {
 
         segmentedControl.selectedSegmentIndex = 0
         hideSegmentVcs()
-        basicVC.hidden = false
+        basicVC.isHidden = false
     }
 
 
     func hideSegmentVcs() {
         
-        livestockVC.hidden = true
-        basicVC.hidden = true
-        equipmentVC.hidden = true
-        waterVC.hidden = true
+        livestockVC.isHidden = true
+        basicVC.isHidden = true
+        equipmentVC.isHidden = true
+        waterVC.isHidden = true
     }
 }

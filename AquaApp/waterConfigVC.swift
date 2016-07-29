@@ -22,21 +22,21 @@ class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         waterParamColView.dataSource = self
     }
 
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    private func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         
         return 1
     }
     
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return myAquarium.water.waterTests.count
     }
   
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("WaterCell", forIndexPath: indexPath) as? WaterCell {
-                let water: Water!
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "WaterCell", for: indexPath as IndexPath) as? WaterCell {
+//                let water: Water!
 //            water =
         
             return cell
@@ -47,7 +47,7 @@ class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     }
     
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
     }
     

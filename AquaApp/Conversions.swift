@@ -33,11 +33,11 @@ func usGallonToGallon(volume: Double) -> Double {
 }
 
 func litreToUsGallon(volume: Double) -> Double {
-    return gallonToUsGallon(litreToGallon(volume))
+    return gallonToUsGallon(volume: litreToGallon(volume: volume))
 }
 
 func usGallonToLitre(volume: Double) -> Double {
-    return gallonToLitre(usGallonToGallon(volume))
+    return gallonToLitre(volume: usGallonToGallon(volume: volume))
 }
 
 func celciusToFarenheit(temperature: Double) -> Double {

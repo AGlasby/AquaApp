@@ -65,12 +65,12 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     }
 
 
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
 
-        volumeStack.hidden = true
-        volumePkrStack.hidden = true
-        nextBtn.hidden = true
-        initPickerRows(volumeComponentCount)
+        volumeStack.isHidden = true
+        volumePkrStack.isHidden = true
+        nextBtn.isHidden = true
+        initPickerRows(componentCount: volumeComponentCount)
         aquariumShape = aquariumShapesNames[0]
     }
 
@@ -83,8 +83,8 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             volumePkr.selectRow(row, inComponent: count, animated: false)
         }
     }
-
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         switch pickerView {
         case shapePkr:
             return shapeComponentCount
@@ -96,9 +96,7 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     }
 
 
-
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch  pickerView {
         case shapePkr:
             return shapeImageCount
@@ -119,25 +117,26 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     }
 
 
+
     func pickerView(pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
 
         switch pickerView {
         case shapePkr:
-            aquariumShapesNames.sortInPlace()
-            return setLabel(aquariumShapesNames[row])
+            aquariumShapesNames.sort()
+            return setLabel(label: aquariumShapesNames[row])
         case volumePkr:
             switch component {
             case hundredsComponent:
-                return setLabel(String(hundredsComponentValues[row % hundredsComponentValues.count]))
+                return setLabel(label: String(hundredsComponentValues[row % hundredsComponentValues.count]))
             case tensComponent:
-                return setLabel(String(tensComponentValues[row % tensComponentValues.count]))
+                return setLabel(label: String(tensComponentValues[row % tensComponentValues.count]))
             case unitsComponent:
-                return setLabel(String(unitsComponentValues[row % unitsComponentValues.count]))
+                return setLabel(label: String(unitsComponentValues[row % unitsComponentValues.count]))
             default:
-                return setLabel("Error")
+                return setLabel(label: "Error")
             }
         default:
-            return setLabel("Error")
+            return setLabel(label: "Error")
         }
     }
 
@@ -145,7 +144,7 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     func setLabel(label: String) -> UIView {
 
         let shapeLbl: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 24))
-        shapeLbl.backgroundColor = UIColor.clearColor()
+        shapeLbl.backgroundColor = UIColor.clear()
         shapeLbl.text = label
         return shapeLbl
     }
@@ -197,14 +196,14 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         switch sender.selectedSegmentIndex {
         case 0:
             volumeKnown = true
-            volumeStack.hidden = false
-            volumePkrStack.hidden = true
-            nextBtn.hidden = false
+            volumeStack.isHidden = false
+            volumePkrStack.isHidden = true
+            nextBtn.isHidden = false
         case 1:
             volumeKnown = false
-            volumeStack.hidden = true
-            volumePkrStack.hidden = false
-            nextBtn.hidden = false
+            volumeStack.isHidden = true
+            volumePkrStack.isHidden = false
+            nextBtn.isHidden = false
             step = 0
             let dim = AQUARIUM_SHAPES[aquariumShape]
             let initialDim = dim![0]
@@ -236,7 +235,7 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         }
         } else {
             let volume = Double(volumeTxt.text!)
-            myAquarium.updateVolume(volume!)
+            myAquarium.updateVolume(volume: volume!)
             notification()
         }
     }
@@ -245,14 +244,14 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     func getAquariumDimensions() {
 
         let shapeDims = AQUARIUM_SHAPES[aquariumShape]
-        let nextDimension = nextStep(step, dimension: shapeDims!)
+        let nextDimension = nextStep(pass: step, dimension: shapeDims!)
         dimensions[shapeDims![step-1]] = Double("\(hundreds)\(tens)\(units)")
         print(dimensions)
         if nextDimension != "Complete" {
             dimensionLbl.text = "Please enter the \(nextDimension):"
         } else {
-            dimensionLbl.hidden = true
-            calculateAquariumVolume(aquariumShape, dimensions: dimensions)
+            dimensionLbl.isHidden = true
+            calculateAquariumVolume(shape: aquariumShape, dimensions: dimensions)
             print("Stop")
             notification()
         }
@@ -275,36 +274,36 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 
         switch shape {
         case "cuboid":
-             let volume = myAquarium.calculateVolume(dimensions["length"]!, width: dimensions["width"]!, depth: dimensions["depth"]!)
-            myAquarium.updateVolume(volume)
+             let volume = myAquarium.calculateVolume(length: dimensions["length"]!, width: dimensions["width"]!, depth: dimensions["depth"]!)
+            myAquarium.updateVolume(volume: volume)
         case "globe":
-            let volume = myAquarium.calculateVolume((dimensions["radius"]! * 2))
-            myAquarium.updateVolume(volume)
+            let volume = myAquarium.calculateVolume(diameter: (dimensions["radius"]! * 2))
+            myAquarium.updateVolume(volume: volume)
         case "bow fronted":
-            let volume = myAquarium.calculateVolume(dimensions["length"]!, width: dimensions["width"]!, depth: dimensions["depth"]!, sagitta: dimensions["sagitta"]!)
-            myAquarium.updateVolume(volume)
+            let volume = myAquarium.calculateVolume(length: dimensions["length"]!, width: dimensions["width"]!, depth: dimensions["depth"]!, sagitta: dimensions["sagitta"]!)
+            myAquarium.updateVolume(volume: volume)
         case "column":
-            let volume = myAquarium.calculateVolume((dimensions["radius"]! * 2), depth: dimensions["depth"]!)
-            myAquarium.updateVolume(volume)
+            let volume = myAquarium.calculateVolume(diameter: (dimensions["radius"]! * 2), depth: dimensions["depth"]!)
+            myAquarium.updateVolume(volume: volume)
         case "corner":
-            let volume = myAquarium.calculateVolume(dimensions["radius"]!, height: dimensions["depth"]!)
-            myAquarium.updateVolume(volume)
+            let volume = myAquarium.calculateVolume(radius: dimensions["radius"]!, height: dimensions["depth"]!)
+            myAquarium.updateVolume(volume: volume)
         case "other":
             let volume = 0.00
-            myAquarium.updateVolume(volume)
+            myAquarium.updateVolume(volume: volume)
         default:
             break
         }
     }
 
     func notification() {
-        nextBtn.hidden = true
+        nextBtn.isHidden = true
 
-        let alertController = UIAlertController(title: "Basic set-up is complete", message: "Select a different tab to continue with set-up or Back to view data", preferredStyle: UIAlertControllerStyle.Alert)
+        let alertController = UIAlertController(title: "Basic set-up is complete", message: "Select a different tab to continue with set-up or Back to view data", preferredStyle: UIAlertControllerStyle.alert)
 
-        let defaultAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.Cancel, handler: nil)
+        let defaultAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil)
         alertController.addAction(defaultAction)
-        presentViewController(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
 
     }
 }
