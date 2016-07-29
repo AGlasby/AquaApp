@@ -10,6 +10,8 @@ import UIKit
 
 
 class SetupVC: UIViewController {
+    
+    var name: String!
 
     @IBOutlet weak var waterVC: UIView!
     @IBOutlet weak var equipmentVC: UIView!
@@ -32,6 +34,8 @@ class SetupVC: UIViewController {
 
         super.viewDidAppear(true)
         initSegmentController()
+        
+        print(name)
     }
 
 

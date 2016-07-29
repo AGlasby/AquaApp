@@ -7,7 +7,7 @@
 //
 
 import UIKit
-var myAquariums: [Aquarium]!
+var myAquariums: [Aquarium] = []
 
 var myAquarium = Aquarium(name: "juwel")
 
@@ -23,7 +23,26 @@ class ViewController: UIViewController {
         myAquarium.water.addTestResult(test: "ph", date: NSDate(), result: 7.8)
         print(myAquarium.water.resultsForTest(test: "ph"))
 
+        
+        if myAquariums.count == 0 {
+          print("You have \(myAquariums.count) aquariums configured")
+            let name = "Juwel - Lake Malawi Cichlid"
+            performSegue(withIdentifier: "ConfigureAquarium", sender: name)
+        
+        } else {
+            
+        }
 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ConfigureAquarium" {
+            if let detailsVC = segue.destinationViewController as? SetupVC {
+                if let name = sender as? String {
+                    detailsVC.name = name
+                }
+            }
+        }
     }
 }
 

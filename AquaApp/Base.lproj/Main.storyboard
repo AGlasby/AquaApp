@@ -23,19 +23,7 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cichlid-tank-1" translatesAutoresizingMaskIntoConstraints="NO" id="cAh-jl-FZL"/>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYM-LF-pVb">
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFc-j0-fAZ">
-                                                <state key="normal" title="setup"/>
-                                                <connections>
-                                                    <segue destination="MzK-2i-ZCx" kind="show" identifier="ConfigureAquarium" id="w7s-vW-9fe"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.63709590517241377" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="QFc-j0-fAZ" firstAttribute="centerY" secondItem="QYM-LF-pVb" secondAttribute="centerY" id="0Od-ew-vN4"/>
-                                            <constraint firstItem="QFc-j0-fAZ" firstAttribute="centerX" secondItem="QYM-LF-pVb" secondAttribute="centerX" id="P33-gN-cWx"/>
-                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -80,6 +68,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="3uI-fY-gOr"/>
+                    <connections>
+                        <segue destination="MzK-2i-ZCx" kind="show" identifier="ConfigureAquarium" id="XD5-Hs-YUG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -226,7 +217,7 @@
                         <viewControllerLayoutGuide type="bottom" id="GPM-zw-HEg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rSf-HF-3AR">
-                        <rect key="frame" x="0.0" y="0.0" width="358" height="592"/>
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="636"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cxe-BF-Ps5">
@@ -291,7 +282,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bvn-Nn-jSk"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iow-IN-SZv">
-                        <rect key="frame" x="0.0" y="0.0" width="358" height="592"/>
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="636"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.1176470588" green="0.53333333329999999" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -309,7 +300,7 @@
                         <viewControllerLayoutGuide type="bottom" id="t1e-IM-Cgj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0kK-vx-PJr">
-                        <rect key="frame" x="0.0" y="0.0" width="358" height="592"/>
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="636"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifS-fm-w4F">
@@ -477,7 +468,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cpZ-7d-uUv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Orb-qu-N7h">
-                        <rect key="frame" x="0.0" y="0.0" width="358" height="592"/>
+                        <rect key="frame" x="0.0" y="0.0" width="358" height="636"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.37772036580000001" green="0.83137254900000002" blue="0.80213236320000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
