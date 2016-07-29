@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AquaApp/waterCell.swift"
-            timestampString = "491485774.134241"
+            timestampString = "491496757.510153"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
             landmarkName = "configureCell(test:)"
             landmarkType = "7">
          </BreakpointContent>

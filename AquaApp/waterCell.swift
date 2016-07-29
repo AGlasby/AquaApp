@@ -18,6 +18,7 @@ class WaterCell: UICollectionViewCell {
         super.init(coder: aDecoder)
         
         layer.cornerRadius = 5.0
+        
     }
 
     func configureCell(test: String) {

@@ -50,9 +50,23 @@ class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionVie
     
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
-    
 
+        let test = myAquarium.water.waterTests[indexPath.row]
+        let testsMonitored = myAquarium.water.testsMonitored
+        if testsMonitored[test] == false {
+            print(test)
+            myAquarium.water.UpdateTestStatus(test: test, status: true)
+            print(myAquarium.water.testsMonitored)
+            let cell = collectionView.cellForItem(at: indexPath)
+            cell?.layer.borderWidth = 2.0
+            cell?.layer.borderColor = UIColor.white().cgColor
+        } else {
+            myAquarium.water.UpdateTestStatus(test: test, status: false)
+            print(myAquarium.water.testsMonitored)
+            let cell = collectionView.cellForItem(at: indexPath)
+            cell?.layer.borderWidth = 2.0
+            cell?.layer.borderColor = UIColor.clear().cgColor
+        }
+        }
 
 }
