@@ -8,7 +8,7 @@
 
 import UIKit
 
-class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var waterColView: UICollectionView!
     
@@ -22,6 +22,13 @@ class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionVie
 
         waterColView.delegate = self
         waterColView.dataSource = self
+        
+        let lpgr : UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(waterConfigVC.handleLongPress(gestureRecognizer:)))
+        lpgr.minimumPressDuration = 0.5
+        lpgr.delegate = self
+        lpgr.delaysTouchesBegan = true
+        self.waterColView?.addGestureRecognizer(lpgr)
+        
     }
 
     private func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -68,5 +75,22 @@ class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionVie
             cell?.layer.borderColor = UIColor.clear().cgColor
         }
         }
+    
+
+    
+    func handleLongPress(gestureRecognizer : UILongPressGestureRecognizer){
+        
+        if (gestureRecognizer.state != UIGestureRecognizerState.ended){
+            return
+        }
+        
+        let p = gestureRecognizer.location(in: self.waterColView)
+        
+        if let indexPath : NSIndexPath = (self.waterColView?.indexPathForItem(at: p))!{
+            //do whatever you need to do
+            print("Here")
+        }
+        
+    }
 
 }

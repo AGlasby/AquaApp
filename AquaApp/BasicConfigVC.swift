@@ -13,7 +13,7 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 
     @IBOutlet weak var shapePkr: UIPickerView!
     @IBOutlet weak var volumePkr: UIPickerView!
-    @IBOutlet weak var volumePkrStack: UIStackView!
+    @IBOutlet weak var volumeSelectStack: UIStackView!
     @IBOutlet weak var volumeStack: UIStackView!
     @IBOutlet weak var volumeLbl: UILabel!
     @IBOutlet weak var volumeTxt: UITextField!
@@ -68,7 +68,7 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     override func viewDidAppear(_ animated: Bool) {
 
         volumeStack.isHidden = true
-        volumePkrStack.isHidden = true
+        volumeSelectStack.isHidden = true
         nextBtn.isHidden = true
         initPickerRows(componentCount: volumeComponentCount)
         aquariumShape = aquariumShapesNames[0]
@@ -143,8 +143,8 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 
     func setLabel(label: String) -> UIView {
 
-        let shapeLbl: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 24))
-        shapeLbl.backgroundColor = UIColor.clear()
+        let shapeLbl: AALabel = AALabel(frame: CGRect(x: 0, y: 0, width: 100, height: 24))
+        shapeLbl.textAlignment = NSTextAlignment.center
         shapeLbl.text = label
         return shapeLbl
     }
@@ -174,7 +174,7 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 
     func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
 
-        return 50.0
+        return 30.0
     }
 
 
@@ -182,11 +182,11 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 
         switch pickerView {
         case shapePkr:
-            return 70.0
+            return 150.0
         case volumePkr:
-            return 70
+            return 50.0
         default:
-            return 70.0
+            return 100.0
         }
     }
 
@@ -197,12 +197,12 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         case 0:
             volumeKnown = true
             volumeStack.isHidden = false
-            volumePkrStack.isHidden = true
+            volumeSelectStack.isHidden = true
             nextBtn.isHidden = false
         case 1:
             volumeKnown = false
             volumeStack.isHidden = true
-            volumePkrStack.isHidden = false
+            volumeSelectStack.isHidden = false
             nextBtn.isHidden = false
             step = 0
             let dim = AQUARIUM_SHAPES[aquariumShape]

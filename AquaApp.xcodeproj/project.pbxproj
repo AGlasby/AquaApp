@@ -17,9 +17,11 @@
 		E721539F1D4203BC00E7CD47 /* Aquarium.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721539E1D4203BC00E7CD47 /* Aquarium.swift */; };
 		E72153A11D4211C700E7CD47 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72153A01D4211C700E7CD47 /* Constants.swift */; };
 		E72153A31D42144B00E7CD47 /* Conversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72153A21D42144B00E7CD47 /* Conversions.swift */; };
+		E77B899E1D4DF4C600340F6B /* AALabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77B899D1D4DF4C600340F6B /* AALabel.swift */; };
 		E77E33781D4274C800A05B9A /* SetupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E33771D4274C800A05B9A /* SetupVC.swift */; };
 		E77E337A1D435F9D00A05B9A /* BasicConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E33791D435F9D00A05B9A /* BasicConfigVC.swift */; };
 		E77E337C1D4904D100A05B9A /* waterConfigVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77E337B1D4904D100A05B9A /* waterConfigVC.swift */; };
+		E79E15E31D4F369500E6BF32 /* AATextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79E15E21D4F369500E6BF32 /* AATextField.swift */; };
 		E7C1C2251D4916AC007D1F13 /* waterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C1C2241D4916AC007D1F13 /* waterCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,9 +38,11 @@
 		E721539E1D4203BC00E7CD47 /* Aquarium.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Aquarium.swift; sourceTree = "<group>"; };
 		E72153A01D4211C700E7CD47 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E72153A21D42144B00E7CD47 /* Conversions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Conversions.swift; sourceTree = "<group>"; };
+		E77B899D1D4DF4C600340F6B /* AALabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AALabel.swift; sourceTree = "<group>"; };
 		E77E33771D4274C800A05B9A /* SetupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupVC.swift; sourceTree = "<group>"; };
 		E77E33791D435F9D00A05B9A /* BasicConfigVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicConfigVC.swift; sourceTree = "<group>"; };
 		E77E337B1D4904D100A05B9A /* waterConfigVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = waterConfigVC.swift; sourceTree = "<group>"; };
+		E79E15E21D4F369500E6BF32 /* AATextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AATextField.swift; sourceTree = "<group>"; };
 		E7C1C2241D4916AC007D1F13 /* waterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = waterCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +121,8 @@
 		E721539C1D42038500E7CD47 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E77B899D1D4DF4C600340F6B /* AALabel.swift */,
+				E79E15E21D4F369500E6BF32 /* AATextField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -206,9 +212,11 @@
 			files = (
 				E72153A11D4211C700E7CD47 /* Constants.swift in Sources */,
 				E7C1C2251D4916AC007D1F13 /* waterCell.swift in Sources */,
+				E77B899E1D4DF4C600340F6B /* AALabel.swift in Sources */,
 				E7155B9D1D4A5459001EF39D /* Water.swift in Sources */,
 				E77E33781D4274C800A05B9A /* SetupVC.swift in Sources */,
 				E721538D1D42034900E7CD47 /* AquaApp.xcdatamodeld in Sources */,
+				E79E15E31D4F369500E6BF32 /* AATextField.swift in Sources */,
 				E72153871D42034900E7CD47 /* ViewController.swift in Sources */,
 				E72153A31D42144B00E7CD47 /* Conversions.swift in Sources */,
 				E721539F1D4203BC00E7CD47 /* Aquarium.swift in Sources */,
