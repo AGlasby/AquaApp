@@ -9,7 +9,7 @@
 import UIKit
 
 
-class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var shapePkr: UIPickerView!
     @IBOutlet weak var volumePkr: UIPickerView!
@@ -20,6 +20,8 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBOutlet weak var dimensionLbl: UILabel!
     @IBOutlet weak var optionSelector: UISegmentedControl!
     @IBOutlet weak var nextBtn: UIButton!
+    
+    var aquarium: Aquarium!
 
 
     var aquariumShapesNames = Array(AQUARIUM_SHAPES.keys)
@@ -62,6 +64,12 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         shapePkr.delegate = self
         volumePkr.dataSource = self
         volumePkr.delegate = self
+        volumeTxt.delegate = self
+        
+        volumeTxt.keyboardType = UIKeyboardType.numberPad
+        volumeTxt.returnKeyType = UIReturnKeyType.next
+        
+        
     }
 
 
@@ -74,6 +82,31 @@ class BasicConfigVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         aquariumShape = aquariumShapesNames[0]
     }
 
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        //Making A toolbar
+        let keyboardDoneButtonShow = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height/17))
+        //Setting the style for the toolbar
+        keyboardDoneButtonShow.barStyle = UIBarStyle.blackTranslucent
+        //Making the done button and calling the textFieldShouldReturn native method for hidding the keyboard.
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.done, target: self, action: #selector(UITextFieldDelegate.textFieldShouldReturn(_:)))
+        //Calculating the flexible Space.
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        //Setting the color of the button.
+        doneButton.tintColor = UIColor.gray()
+        //Making an object using the button and space for the toolbar
+        let toolbarButton = [flexSpace,doneButton]
+        //Adding the object for toolbar to the toolbar itself
+        keyboardDoneButtonShow.setItems(toolbarButton, animated: false)
+        //Now adding the complete thing against the desired textfield
+        volumeTxt.inputAccessoryView = keyboardDoneButtonShow
+        return true
+    }
+    
+    //Function for hidding the keyboard.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 
     func initPickerRows(componentCount: Int) {
 

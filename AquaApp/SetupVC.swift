@@ -11,7 +11,7 @@ import UIKit
 
 class SetupVC: UIViewController {
     
-    var name: String!
+    var aquarium: Aquarium!
 
     @IBOutlet weak var waterVC: UIView!
     @IBOutlet weak var equipmentVC: UIView!
@@ -26,7 +26,6 @@ class SetupVC: UIViewController {
 
         // Do any additional setup after loading the view.
 
-//        initSegmentController()
     }
 
 
@@ -35,7 +34,8 @@ class SetupVC: UIViewController {
         super.viewDidAppear(true)
         initSegmentController()
         
-        print(name)
+        print(myAquariums[0].name)
+
     }
 
 
@@ -48,10 +48,11 @@ class SetupVC: UIViewController {
             basicVC.isHidden = false
         case 1:
             hideSegmentVcs()
-            equipmentVC.isHidden = false
+            waterVC.isHidden = false
         case 2:
             hideSegmentVcs()
-            waterVC.isHidden = false
+            equipmentVC.isHidden = false
+//            performSegue(withIdentifier: "ConfigureEquipment", sender: aquarium)
         case 3:
             hideSegmentVcs()
             livestockVC.isHidden = false
@@ -76,4 +77,14 @@ class SetupVC: UIViewController {
         equipmentVC.isHidden = true
         waterVC.isHidden = true
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if segue.identifier == "ConfigureEquipment" {
+//            if let embeddedVC = segue.destinationViewController as? EquipmentVC {
+//                if let aquarium = sender as? Aquarium {
+//                    embeddedVC.aquarium = aquarium
+//                }
+//            }
+//        }
+//    }
 }

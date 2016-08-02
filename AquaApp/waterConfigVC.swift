@@ -86,9 +86,35 @@ class waterConfigVC: UIViewController, UICollectionViewDelegate, UICollectionVie
         
         let p = gestureRecognizer.location(in: self.waterColView)
         
-        if let indexPath : NSIndexPath = (self.waterColView?.indexPathForItem(at: p))!{
+        let indexPath = self.waterColView?.indexPathForItem(at: p)
+        
+        if let index = indexPath {
+            
             //do whatever you need to do
-            print("Here")
+            notification(notiType: false)
+            
+        } else {
+
+            notification(notiType: true)
+        }
+        
+    }
+    
+    func notification(notiType: Bool) {
+        
+        if !notiType {
+        
+            let alertController = UIAlertController(title: "You selected a test cell", message: "This will determine the cell and then display information about the test", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let defaultAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            present(alertController, animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(title: "You didn't select a test cell", message: "Please select one of the test cells", preferredStyle: UIAlertControllerStyle.alert)
+            
+            let defaultAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            present(alertController, animated: true, completion: nil)
         }
         
     }

@@ -16,19 +16,28 @@ class Aquarium {
     
     private var _water = Water()
 
+    
+    var name: String {
+        return _name
+    }
+    
+    
     var volume: Double {
         return _volume
     }
     
+    
     var water: Water {
         return _water
     }
+    
 
     init(name: String) {
         _name = name
         _type = ""
         _volume = 0
     }
+    
 
     func updateVolume(volume: Double) {
 

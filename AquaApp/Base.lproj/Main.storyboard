@@ -23,7 +23,22 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cichlid-tank-1" translatesAutoresizingMaskIntoConstraints="NO" id="cAh-jl-FZL"/>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QYM-LF-pVb">
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="setup VC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aai-BA-EnO">
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="4LN-LD-pOD"/>
+                                                    <constraint firstAttribute="width" constant="88" id="TNd-sC-izY"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.63709590517241377" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="aai-BA-EnO" firstAttribute="centerY" secondItem="QYM-LF-pVb" secondAttribute="centerY" id="Wza-c5-zk8"/>
+                                            <constraint firstItem="aai-BA-EnO" firstAttribute="centerX" secondItem="QYM-LF-pVb" secondAttribute="centerX" id="nxd-xz-89z"/>
+                                        </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -70,11 +85,30 @@
                     <navigationItem key="navigationItem" id="3uI-fY-gOr"/>
                     <connections>
                         <segue destination="MzK-2i-ZCx" kind="show" identifier="ConfigureAquarium" id="XD5-Hs-YUG"/>
+                        <segue destination="shw-GR-bmd" kind="show" identifier="ShowAquarium" id="8Pt-Rg-7Zh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1117" y="387"/>
+            <point key="canvasLocation" x="1122" y="393"/>
+        </scene>
+        <!--Aquarium Viewer-->
+        <scene sceneID="hAk-uC-3bw">
+            <objects>
+                <viewController id="shw-GR-bmd" userLabel="Aquarium Viewer" customClass="AquariumViewVC" customModule="AquaApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iYh-bc-bpn"/>
+                        <viewControllerLayoutGuide type="bottom" id="6Pb-tv-QAN"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="it5-wT-NQh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N7U-QA-wOL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1097" y="1092"/>
         </scene>
         <!--AquariumSetupVC-->
         <scene sceneID="kwK-tZ-STw">
@@ -92,8 +126,8 @@
                             <segmentedControl opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="eAl-uU-6pQ">
                                 <segments>
                                     <segment title="Basic"/>
-                                    <segment title="Equipment"/>
                                     <segment title="Water"/>
+                                    <segment title="Equipment"/>
                                     <segment title="Livestock"/>
                                 </segments>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -220,7 +254,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="327" height="523"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cxe-BF-Ps5">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Cxe-BF-Ps5">
+                                <frame key="frameInset" minX="12" minY="-8" width="32"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5j2-bw-cuh">
                                     <size key="itemSize" width="106" height="88"/>
@@ -230,7 +265,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="WaterCell" id="ku1-Lw-acR" customClass="WaterCell" customModule="AquaApp" customModuleProvider="target">
-                                        <frame key="frameInset" width="106" height="88"/>
+                                        <frame key="frameInset" minX="-37" width="106" height="88"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="106" height="88"/>
@@ -314,9 +349,11 @@
                                     <action selector="nextTouchedWithSender:" destination="IY4-wf-JB1" eventType="touchUpInside" id="Gkp-vJ-90N"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VU2-0X-NMy">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VU2-0X-NMy">
+                                <frame key="frameInset" minX="12" minY="12" width="303" height="472"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What shape is your aquarium?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQQ-7Z-duk" customClass="AALabel" customModule="AquaApp" customModuleProvider="target">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="What shape is your aquarium?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gQQ-7Z-duk" customClass="AALabel" customModule="AquaApp" customModuleProvider="target">
+                                        <frame key="frameInset" width="303" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="nbR-wh-eHd"/>
                                         </constraints>
@@ -324,7 +361,8 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyO-qp-ZgK">
+                                    <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gyO-qp-ZgK">
+                                        <frame key="frameInset" minY="31" width="303" height="154"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="154" id="Ep6-mI-Vhk"/>
                                         </constraints>
@@ -333,9 +371,11 @@
                                             <outlet property="delegate" destination="0kK-vx-PJr" id="XmI-fU-rxa"/>
                                         </connections>
                                     </pickerView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7Od-H7-OzV" userLabel="Volume Question Stack View">
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7Od-H7-OzV" userLabel="Volume Question Stack View">
+                                        <frame key="frameInset" minY="195" width="303" height="42"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you know the volume of your aquarium?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGP-5f-iPO" customClass="AALabel" customModule="AquaApp" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Do you know the volume of your aquarium?" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGP-5f-iPO" customClass="AALabel" customModule="AquaApp" customModuleProvider="target">
+                                                <frame key="frameInset" width="203" height="42"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="247" id="1WO-L7-TuY"/>
                                                     <constraint firstAttribute="height" constant="42" id="lOK-kG-LJF"/>
@@ -349,7 +389,8 @@
                                                     </mask>
                                                 </variation>
                                             </label>
-                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="7zp-Qe-Y9y">
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="7zp-Qe-Y9y">
+                                                <frame key="frameInset" minX="223" width="80" height="43"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="jcV-Ia-sOn"/>
                                                 </constraints>
@@ -368,37 +409,45 @@
                                             <constraint firstAttribute="trailing" secondItem="7zp-Qe-Y9y" secondAttribute="trailing" id="gTM-eY-dhs"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VHI-6m-sen" userLabel="VolumeEntryStackView">
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VHI-6m-sen" userLabel="VolumeEntryStackView">
+                                        <frame key="frameInset" minY="247" width="303" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the volume in litres:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nH4-tC-cX5" customClass="AALabel" customModule="AquaApp" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please enter the volume in litres:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nH4-tC-cX5" customClass="AALabel" customModule="AquaApp" customModuleProvider="target">
+                                                <frame key="frameInset" width="213" height="40"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hyX-Gi-qfC">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hyX-Gi-qfC">
+                                                <frame key="frameInset" minX="223" width="80" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="80" id="sF3-ii-hYi"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" spellCheckingType="no" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="hyX-Gi-qfC" secondAttribute="trailing" id="lDa-vw-vtA"/>
                                         </constraints>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="q45-FN-igk" userLabel="Volume Select Stack View">
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="q45-FN-igk" userLabel="Volume Select Stack View">
+                                        <frame key="frameInset" minY="297" width="303" height="175"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter the length:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52v-Lg-wOs" customClass="AALabel" customModule="AquaApp" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Please enter the length:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="52v-Lg-wOs" customClass="AALabel" customModule="AquaApp" customModuleProvider="target">
+                                                <frame key="frameInset" width="180" height="20"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="toR-KQ-Qlw">
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="toR-KQ-Qlw">
+                                                <frame key="frameInset" minY="25" width="303" height="150"/>
                                                 <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PJi-aW-CLi">
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PJi-aW-CLi">
+                                                        <frame key="frameInset" width="243" height="150"/>
                                                         <subviews>
-                                                            <pickerView contentMode="scaleToFill" horizontalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="1OK-SS-ffm">
+                                                            <pickerView contentMode="scaleToFill" horizontalCompressionResistancePriority="749" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1OK-SS-ffm">
+                                                                <frame key="frameInset" width="136" height="150"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             </pickerView>
@@ -411,7 +460,8 @@
                                                             <constraint firstItem="1OK-SS-ffm" firstAttribute="top" secondItem="PJi-aW-CLi" secondAttribute="top" id="nCc-D4-hek"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rft-U5-Vha" customClass="AALabel" customModule="AquaApp" customModuleProvider="target">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="cm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rft-U5-Vha" customClass="AALabel" customModule="AquaApp" customModuleProvider="target">
+                                                        <frame key="frameInset" minX="253" width="50" height="150"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="50" id="6dv-t1-jT7"/>
                                                         </constraints>
